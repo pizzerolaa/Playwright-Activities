@@ -1,0 +1,26 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Simulation</title>
+</head>
+<body>
+  <h1 id="status">Not logged in</h1>
+  <button id="login">Login</button>
+
+  <script>
+    document.getElementById('login').addEventListener('click', () => {
+      localStorage.setItem('user', 'admin');
+      document.getElementById('status').textContent = 'Logged in as admin';
+    });
+
+    // Simulate auto-login on reload if user exists in localStorage
+    window.addEventListener('load', () => {
+      const user = localStorage.getItem('user');
+      if (user) {
+        document.getElementById('status').textContent = 'Logged in as ' + user;
+      }
+    });
+  </script>
+</body>
+</html>

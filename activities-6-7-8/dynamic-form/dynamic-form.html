@@ -1,0 +1,53 @@
+<!-- dynamic-form.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dynamic Form</title>
+  </head>
+  <body>
+    <button id="start">Start Form</button>
+
+    <form id="form" style="display: none">
+      <input id="name" type="text" placeholder="Name" />
+      <button id="next" disabled>Next</button>
+      <div id="loader" style="display: none">Loading...</div>
+      <select id="options" style="display: none">
+        <option value="">Choose</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+      </select>
+    </form>
+
+    <script>
+      document.getElementById("start").addEventListener("click", () => {
+        const form = document.getElementById("form");
+        const nextBtn = document.getElementById("next");
+        const loader = document.getElementById("loader");
+        const select = document.getElementById("options");
+
+        form.style.display = "block";
+
+        const nameInput = document.getElementById("name");
+        nameInput.addEventListener("input", () => {
+          if (nameInput.value.trim()) {
+            nextBtn.disabled = false;
+          } else {
+            nextBtn.disabled = true;
+          }
+        });
+
+        nextBtn.addEventListener("click", (event) => {
+          event.preventDefault(); // Prevent form submission
+          loader.style.display = "block";
+          select.style.display = "none";
+
+          setTimeout(() => {
+            loader.style.display = "none";
+            select.style.display = "block";
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+</html>

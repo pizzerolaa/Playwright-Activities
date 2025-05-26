@@ -1,0 +1,29 @@
+<!-- counter.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Async Counter</title>
+  </head>
+  <body>
+    <h1 id="status" data-testId="testId-status">Loading...</h1>
+    <button id="count-btn" data-testId="testId-count-btn">Count</button>
+    <p id="counter" data-testId="testId-counter">0</p>
+
+    <script>
+      let count = 0;
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+          document.getElementById("status").textContent = "Ready";
+        }, 1500);
+
+        document.getElementById("count-btn").addEventListener("click", () => {
+          setTimeout(() => {
+            count++;
+            document.getElementById("counter").textContent = count.toString();
+          }, 1000); // simulate delayed update
+        });
+      });
+    </script>
+  </body>
+</html>
