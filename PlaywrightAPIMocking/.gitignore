@@ -1,0 +1,7 @@
+node_modules/
+dist/
+coverage/
+.vscode/
+test-results/
+playwright-report/
+harry-potter-api.har
