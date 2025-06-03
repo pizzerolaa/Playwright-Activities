@@ -69,17 +69,17 @@ Resultado: ✅ SEGURO - 0 usuarios mostrados consistentemente
 ```
 
 ## 🔍 Scripts Disponibles
-**dvwa_security_tester_fixed.py** - Principal
+**dvwa_security_tester.py** - Principal
 - Función: Testing automatizado de las 3 vulnerabilidades
 - Niveles: Low, Medium, High, Impossible
 - Output: JSON + Markdown con resultados detallados
 
-**dvwa_manual_verifier.py** - Verificación
+**dvwa_manual_verif.py** - Verificación
 - Función: Verificación manual de casos específicos
 - Uso: Validar resultados del script principal
 - Output: Análisis detallado de respuestas
 
-**complete_verification.py** - Investigación
+**complete_verif.py** - Investigación
 - Función: Análisis profundo de casos problemáticos
 - Uso: Investigar falsos positivos
 - Output: Conclusiones sobre implementación real
