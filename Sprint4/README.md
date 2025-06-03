@@ -67,3 +67,31 @@ Resultado: ⚠️ VULNERABLE - Muestra 5 usuarios vs 1 normal
 Payload: 1' OR '1'='1
 Resultado: ✅ SEGURO - 0 usuarios mostrados consistentemente
 ```
+
+## 🔍 Scripts Disponibles
+**dvwa_security_tester_fixed.py** - Principal
+- Función: Testing automatizado de las 3 vulnerabilidades
+- Niveles: Low, Medium, High, Impossible
+- Output: JSON + Markdown con resultados detallados
+
+**dvwa_manual_verifier.py** - Verificación
+- Función: Verificación manual de casos específicos
+- Uso: Validar resultados del script principal
+- Output: Análisis detallado de respuestas
+
+**complete_verification.py** - Investigación
+- Función: Análisis profundo de casos problemáticos
+- Uso: Investigar falsos positivos
+- Output: Conclusiones sobre implementación real
+
+## ⚠️ Hallazgos Importantes
+### ✅ Confirmados como SEGUROS
+- Command Injection Impossible: Validación IP + escapeshellarg()
+- SQL Injection Impossible: Prepared statements + validación numérica
+- XSS Stored Impossible: Sanitización completa
+### 🔴 Confirmados como VULNERABLES
+- Todos los niveles LOW: Sin protecciones implementadas
+- Command Injection Low: Concatenación directa en shell_exec()
+- SQL Injection Low: Consultas dinámicas sin sanitización
+### 🤔 Lo aprendido 
+Los scripts automatizados requieren verificación manual - Inicialmente el script mostró falsos positivos en niveles altos que fueron corregidos mediante análisis manual.
