@@ -26,7 +26,7 @@ docker run --rm -it -p 80:80 vulnerables/web-dvwa
 pip install requests beautifulsoup4
 
 # Ejecutar script principal
-python scripts/dvwa_security_tester_fixed.py
+python scripts/dvwa_security_tester.py
 ```
 ### 3. Verificación Manual
 ```bash
